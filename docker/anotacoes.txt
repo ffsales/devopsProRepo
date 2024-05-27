@@ -1,0 +1,22 @@
+sudo usermod -aG docker $USER
+
+docker container ls
+
+docker container run -d -p 8080:80 nginx
+
+docker container stop <id do container>
+
+docker container start <id do container>
+
+docker container ls -a
+
+docker container ls -qa
+
+docker container rm -f $(docker container ls -qa)
+
+docker logs <id do container>
+
+docker container run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD="root1234" -e MYSQL_DATABASE="aula-docker" -e MYSQL_USER="userdocker" -e MYSQL_PASSWORD="userdockerpwd" mysql
+
+
+docker container run -d -p 5432:5432 -e POSTGRES_DB="curso_docker" -e POSTGRES_USER="docker_usr" -e POSTGRES_PASSWORD="docker_pwd" postgres
